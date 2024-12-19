@@ -2,7 +2,8 @@ SELECT
     post.linkImmagine,
     post.data,
     COUNT(postlikes.idLike) AS likes,
-    utenti.username
+    utenti.username,
+    post.idPost
 FROM
     post
     LEFT JOIN postlikes ON post.idPost = postlikes.idPost

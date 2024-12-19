@@ -9,8 +9,6 @@ function createCard(cardElt){
     cardImg.src = cardElt.linkImmagine;
     card.appendChild(cardImg);
 
-    
-
     let infoContainer = document.createElement("div");
     infoContainer.classList.add("infoContainer");
     card.appendChild(infoContainer);
@@ -33,6 +31,10 @@ function createCard(cardElt){
     likeIcon.classList.add("fas");
     likeIcon.classList.add("fa-heart");
     cardLikesContainer.appendChild(likeIcon);
+
+    cardContainer.addEventListener("click", function(){
+        window.location.href = "post.php?state=view&id=" + cardElt.idPost;
+    });
 }
 
 window.onload = function(){
