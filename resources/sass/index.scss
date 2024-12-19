@@ -1,0 +1,46 @@
+main{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/background.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5vh;
+        margin-top: 5vh;
+        width: 50%;
+
+        h1, p, a{
+            color: rgba(207, 207, 156, 0.8);
+        }
+
+        h1{
+            font-size: 3rem;
+        }
+
+        p, a{
+            font-size: 1.5rem;
+        }
+
+        a{
+            text-decoration: none;
+            transition: top 0.3 ease;
+            position: relative;
+                     
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+    }
+}
