@@ -1,0 +1,90 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 600px;
+    background-color: brown;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 10vh 0;
+
+    input{
+        padding: 10px;
+        margin-bottom: 5vh;
+        border: none;
+        border-bottom: 1px solid burlywood;
+        background-color: transparent;
+        color: burlywood;
+
+        &:focus{
+            outline: none;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    label{
+        color: burlywood;
+        font-size: 1.5rem;
+        position: relative;
+        top: 4.5vh;
+        left: 2vw;
+        transition: all 0.3s ease;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &.focused{
+            top: 0;
+            left: 0;
+            font-size: 1rem;
+        }
+    }
+
+    input[type="date"]{
+        appearance: none;
+        -webkit-appearance: none;
+        &::-webkit-calendar-picker-indicator{
+            display: none;
+        }
+    }
+
+    input[type="submit"]{
+        background-color: burlywood;
+        color: brown;
+        font-size: 1.5rem;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 5vh;
+
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &:disabled{
+            background-color: grey;
+            color: black;
+        }
+    }
+
+    p, a{
+        text-align: center;
+        color: burlywood;
+    }
+    p{
+        margin-bottom: 5vh;
+    }
+}
