@@ -5,9 +5,12 @@ function createCard(cardElt){
     card.classList.add("card");
     cardContainer.appendChild(card);
 
+    let imgContainer = document.createElement("div");
+    imgContainer.classList.add("imgContainer");
+    card.appendChild(imgContainer);
     let cardImg = document.createElement("img");
     cardImg.src = cardElt.linkImmagine;
-    card.appendChild(cardImg);
+    imgContainer.appendChild(cardImg);
 
     let infoContainer = document.createElement("div");
     infoContainer.classList.add("infoContainer");
@@ -38,7 +41,7 @@ function createCard(cardElt){
 }
 
 window.onload = function(){
-    cardsArray.array.forEach(element => {
+    cardsArray.forEach(element => {
         createCard(element);
     });
 }

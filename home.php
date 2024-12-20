@@ -19,8 +19,6 @@
             $query->execute();
             $result = $query->get_result();
             $query->close();
-            print_r($result);
-            echo '<br>';
             $cardsArray = $result->fetch_all(MYSQLI_ASSOC);
         ?>
         <script>
