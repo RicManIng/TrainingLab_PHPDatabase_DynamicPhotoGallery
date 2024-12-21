@@ -42,6 +42,27 @@
                 }
             }
         }
+
+        if(isset($_POST['Register'])){
+            $name = $_POST['name'];
+            $surname = $_POST['surname'];
+            $birthDate = date('Y-m-d', strtotime($_POST['birth-date']));
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $confirmPassword = $_POST['confirm-password'];
+            if($password != $confirmPassword){
+                $error = 'Passwords do not match';
+            } else {
+                $hashedPassword = hash('sha256', $password);
+                $sql = file_get_contents('./resources/query/addNewUser.sql');
+                $query = $mysqli->prepare($sql);
+                $query->bind_param('sssss', $name, $surname, $birthDate, $username, $hashedPassword);
+                $query->execute();
+                $query->close();
+                $_SESSION['username'] = $username;
+                header('Location: home.php');
+            }
+        }
     ?>
     <script>
         let page_status = '';
@@ -78,7 +99,7 @@
                 <input type="password" name="password" id="password" required>
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" name="confirm-password" id="confirm-password" required>
-                <input type="submit" value="Register" disabled>
+                <input type="submit" name="Register" value="Register" disabled>
                 <p>Already have an account?</p>
                 <a href="login.php?state=login">Login</a>
             </form>

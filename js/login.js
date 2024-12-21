@@ -20,11 +20,9 @@ function checkRegistrationForm(nome, cognome, password, confirmPassword, birthDa
     }
 
     if (!invalidForm){
-        let submit = document.querySelector("form").submit();
-        submit.disabled = false;
+        document.querySelector("input[type='submit']").disabled = false;
     } else {
-        let submit = document.querySelector("form").submit();
-        submit.disabled = true;
+        document.querySelector("input[type='submit']").disabled = true;
     }
 }
 
@@ -48,7 +46,6 @@ function checkPassword(password){
         isLongEnough.test(password)
     ];
     
-    console.log(resultsArray);
     return resultsArray;
 }
 
@@ -131,6 +128,7 @@ window.onload = function(){
                 console.log("Nome non valido");
             } else {
                 removeErrorMessage(nome);
+                checkRegistrationForm(nome.value, cognome.value, password.value, confirmPassword.value, birthDate.value, username.value);
             }
         });
 
@@ -139,6 +137,7 @@ window.onload = function(){
                 addErrorMessage(cognome, "Il cognome deve essere compreso tra 1 e 50 caratteri.");
             } else {
                 removeErrorMessage(cognome);
+                checkRegistrationForm(nome.value, cognome.value, password.value, confirmPassword.value, birthDate.value, username.value);
             }
         });
 
@@ -147,6 +146,7 @@ window.onload = function(){
                 addErrorMessage(username, "Lo username deve essere compreso tra 1 e 50 caratteri.");
             } else {
                 removeErrorMessage(username);
+                checkRegistrationForm(nome.value, cognome.value, password.value, confirmPassword.value, birthDate.value, username.value);
             }
         });
 
@@ -155,6 +155,7 @@ window.onload = function(){
                 addErrorMessage(birthDate, "La data di nascita è obbligatoria.");
             } else {
                 removeErrorMessage(birthDate);
+                checkRegistrationForm(nome.value, cognome.value, password.value, confirmPassword.value, birthDate.value, username.value);
             }
         });
 
@@ -163,6 +164,7 @@ window.onload = function(){
                 addErrorMessage(confirmPassword, "Le password non coincidono.");
             } else {
                 removeErrorMessage(confirmPassword);
+                checkRegistrationForm(nome.value, cognome.value, password.value, confirmPassword.value, birthDate.value, username.value);
             }
         });
 
@@ -191,6 +193,7 @@ window.onload = function(){
                 addErrorChecklist(password, checklistObjects);
             } else {
                 removeErrorChecklist(password);
+                checkRegistrationForm(nome.value, cognome.value, password.value, confirmPassword.value, birthDate.value, username.value);
             }
         });
     }
