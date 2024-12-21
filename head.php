@@ -17,3 +17,8 @@
 <!-- Aggiungi il link a Flatpickr -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<!-- start session -->
+<?php
+    session_start();
+?>

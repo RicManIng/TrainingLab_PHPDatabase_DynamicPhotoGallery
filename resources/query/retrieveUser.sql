@@ -1,5 +1,5 @@
 SELECT
-    utenti.username
+    utenti.username,
     utenti.password
 FROM
     utenti

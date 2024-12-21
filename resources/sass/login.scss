@@ -87,4 +87,25 @@ form{
     p{
         margin-bottom: 5vh;
     }
+
+    .error{
+        font-size: 1.5rem;
+        color: rgb(255, 110, 110);
+    }
+
+    .error-message{
+        color: rgb(255, 110, 110);
+    }
+
+    ul{
+        color: burlywood;
+
+        .ok-message{
+            color: rgb(110, 255, 110);
+        }
+
+        .error-message{
+            color: rgb(255, 110, 110);
+        }
+    }
 }

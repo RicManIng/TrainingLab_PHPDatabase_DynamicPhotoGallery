@@ -12,13 +12,15 @@
         require_once 'connectDatabase.php';
         require_once 'header.php';
 
+        $error = '';
+
         if(!isset($_GET['state'])){
             $state = 'login';
         } else {
             $state = $_GET['state'];
         }
 
-        if(isset($_POST['login'])){
+        if(isset($_POST['Login'])){
             $username = $_POST['username'];
             $password = $_POST['password'];
             $sql = file_get_contents('./resources/query/retrieveUser.sql');
@@ -29,30 +31,40 @@
             $query->close();
             $user = $result->fetch_assoc();
             if($user == null){
-                echo '<script>alert("Invalid username")</script>';
+                $error = 'Invalid username';
             } else {
                 $hashedPassword = hash('sha256', $password);
                 if($hashedPassword == $user['password']){
                     $_SESSION['username'] = $user['username'];
                     header('Location: home.php');
                 } else {
-                    echo '<script>alert("Invalid password")</script>';
+                    $error = 'Invalid password';
                 }
             }
         }
     ?>
+    <script>
+        let page_status = '';
+    </script>
     <main>
         <?php if($state == 'login'): ?>
+            <script>
+                page_status = 'login';
+            </script>
             <form action="login.php?state=login" method="post">
                 <label for="username">Username</label>
                 <input type="username" name="username" id="username" required>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" required>
-                <input type="submit" value="Login">
+                <input type="submit" name="Login" value="Login">
+                <p class="error"><?= $error; ?></p>
                 <p>Don't have an account yet?</p>
                 <a href="login.php?state=register">Register</a>
             </form>
         <?php elseif($state == 'register'): ?>
+            <script>
+                page_status = 'register';
+            </script>
             <form action="login.php?state=register" method="post">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" required>
