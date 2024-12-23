@@ -35,8 +35,8 @@ function createCard(cardElt){
     likeIcon.classList.add("fa-heart");
     cardLikesContainer.appendChild(likeIcon);
 
-    cardContainer.addEventListener("click", function(){
-        window.location.href = "post.php?state=view&id=" + cardElt.idPost;
+    card.addEventListener("click", function(){
+        window.location.href = "post.php?id=" + cardElt.idPost;
     });
 }
 

@@ -1,0 +1,74 @@
+
+
+section{
+    margin: 10vh auto;
+}
+
+#postInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    
+    img{
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+    #generalInfo{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        align-items: center;
+        text-align: center;
+        color: brown;
+    }
+
+    #description{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        gap: 2vh;
+        align-items: center;
+        color: burlywood;
+        text-align: justify;
+        padding: 30px;
+        border-radius: 15px;
+        background-color: brown;
+    }
+}
+
+#postLikes{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 80%;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: brown;
+    color: burlywood;
+
+    #likesContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .likeCard{
+        display: flex;
+        flex-direction: row;
+        gap: 5vw;
+        align-items: center;
+        width: 50%;
+        justify-content: space-between;  
+        padding: 10px;
+        border-bottom: 1px solid burlywood;      
+
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+    
+}
