@@ -1,6 +1,7 @@
 SELECT
     utenti.username,
-    utenti.password
+    utenti.password,
+    utenti.idUtente
 FROM
     utenti
 WHERE

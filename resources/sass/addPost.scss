@@ -1,0 +1,73 @@
+form{
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh auto;
+    
+    input, textarea{
+        margin-bottom: 5vh;
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: brown;
+        color: burlywood;
+
+        &::-webkit-file-upload-button {
+            color: brown;
+            background-color: burlywood;
+            border: 1px solid brown;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Montserrat';
+            transition: color 0.5s ease;
+
+            &:hover{
+                background-color: brown;
+                color: burlywood;
+                border: 1px solid burlywood;
+            }
+        }
+
+        &::placeholder{
+            color: burlywood;
+        }
+    }
+
+    p, label{
+        font-size: 1.5rem;
+        color: brown;
+        margin-bottom: 2vh;
+    }
+
+    img{
+        max-height: 50vh;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        border-radius: 20px;
+        border: 2px solid brown;
+        object-fit: contain; /* Mantiene le proporzioni senza stretching */
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 5vh;
+    }
+
+    input[type="submit"]{
+        background-color: burlywood;
+        color: brown;
+        font-size: 1.5rem;
+        width: 50%;
+        padding: 10px 20px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover{
+            background-color: brown;
+            color: burlywood;
+        }
+    }
+}
